@@ -10,7 +10,7 @@ $ yarn install
 $ yarn dev
 ```
 
-##Após a execução de inicialização renderizara no terminal:
+## Após a execução de inicialização renderizara no terminal:
 
 ```bash
 VITE v4.3.8
