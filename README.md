@@ -22,5 +22,4 @@ VITE v4.3.8
 ```
 
 ## Links para contato e uso da aplicação
-[Linkedin](https://www.linkedin.com/in/andrew-da-silva-569101246/)
-[Deploy da aplicação](https://client-app-neon.vercel.app/)
+[Linkedin](https://www.linkedin.com/in/andrew-da-silva-569101246/) / [Deploy da aplicação](https://client-app-neon.vercel.app/)
