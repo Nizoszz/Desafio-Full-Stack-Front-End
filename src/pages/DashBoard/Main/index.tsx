@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ClientList } from "../../../components/TechList";
+import { ClientList } from "../../../components/ClientList";
 
 import { ButtonStyled } from "../../../styles/button";
 import { Container } from "../../../styles/container";
