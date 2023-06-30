@@ -1,4 +1,4 @@
-import { yupResolver } from "@hookform/resolvers/yup";
+
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { UserContext } from "../../../providers/UserProvider";
@@ -8,6 +8,7 @@ import { RegisterSchema } from "./registerSchema";
 import { ErrorParagraph, FormRegisterStyled } from "./style";
 import { iRegisterFormValues } from "./types";
 import { SubmitHandler } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 export const RegisterForm = () => {
   const [loading, setLoading] = useState(false);
   const { userRegister } = useContext(UserContext);
@@ -17,7 +18,7 @@ export const RegisterForm = () => {
     formState: { isValid, errors },
   } = useForm<iRegisterFormValues>({
     mode: "onBlur",
-    resolver: yupResolver(RegisterSchema),
+    resolver: zodResolver(RegisterSchema),
   });
 
   const submit: SubmitHandler<iRegisterFormValues> = (data) => {
