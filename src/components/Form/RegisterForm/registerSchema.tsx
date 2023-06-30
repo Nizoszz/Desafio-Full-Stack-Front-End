@@ -1,29 +1,25 @@
-import * as yup from "yup";
-export const RegisterSchema = yup.object().shape({
-  name: yup
+import * as z from "zod";
+export const RegisterSchema = z.object({
+  name: z
     .string()
-    .required("Enter your name")
+    .nonempty("Enter your name")
     .min(3, "Your name must contain at least three characters"),
-  email: yup
+  email: z.string().nonempty("Enter your e-mail").email("Enter a valid e-mail"),
+  password: z
     .string()
-    .required("Enter your e-mail")
-    .email("Enter a valid e-mail"),
-  password: yup
-    .string()
-    .required("Enter your password")
-    .matches(
+    .nonempty("Enter your password")
+    .regex(
       /(?=.*?[A-Z])/,
       "Your password must contain at least one upper case letter"
     )
-    .matches(
+    .regex(
       /(?=.*?[a-z])/,
       "Your password must contain at least one lower case letter"
     )
-    .matches(/(?=.*?[0-9])/, "Your password must contain at least one number")
-    .matches(
+    .regex(/(?=.*?[0-9])/, "Your password must contain at least one number")
+    .regex(
       /(?=.*?[#?!@$%^&*-])/,
       "Your password must contain at least one special character"
     )
     .min(8, "Your password must contain a minimum of eigth characters"),
-
 });

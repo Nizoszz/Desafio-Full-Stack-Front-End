@@ -103,7 +103,8 @@ export const UserProvider = ({ children }: iUserProviderProps) => {
   ) => {
     try {
       setLoading(true);
-      const request = await toast.promise(api.post("users", data), {
+      const request = await toast.promise(api.post("users", data),
+       {
         pending: {
           render() {
             return <MessageToast message="Loading..." />;
